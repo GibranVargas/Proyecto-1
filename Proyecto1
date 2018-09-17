@@ -1,0 +1,50 @@
+Soldado soldado;
+Ana ana;
+Tracer tracer;
+Winston winston;
+PInicio logo;
+Sandra sandra;
+PPelea pelea;
+Juego juego;
+PPersonajes seleccion;
+Reinicio reiniciar;
+int pantalla=1;
+int J1, J2;
+
+void setup()
+{
+  size(800,600);
+  background(30);
+  reiniciar = new Reinicio();
+  logo = new PInicio();
+  soldado= new Soldado();
+  ana = new Ana();
+  tracer = new Tracer();
+  winston = new Winston();
+  sandra = new Sandra();
+  pelea = new PPelea();
+  juego = new Juego();
+  seleccion = new PPersonajes();
+}
+
+void draw()
+{ 
+  switch(pantalla)
+  {
+    case 1:
+      pushMatrix();
+      translate(160,-130);
+      logo.Logo();
+      popMatrix();
+      break;
+    case 2:
+      seleccion.ppersonajes();
+      break;
+    case 3:
+      pelea.ppelea();
+      juego.pelea();
+      
+  }
+  fill(255);
+  text("USA EL TECLADO",350,580);
+}
